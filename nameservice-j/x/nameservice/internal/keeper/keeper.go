@@ -35,3 +35,9 @@ func (k Keeper) GetWhois(ctx sdk.Context, name string) types.Whois {
 	k.cdc.MustUnmarshalBinaryBare(bz, &whois)
 	return whois
 }
+
+// Deletes the entire Whois metadata struct for a name
+func (k Keeper) DeleteWhois(ctx sdk.Context, name string) {
+	store := ctx.KVStore(k.storeKey)
+	store.Delete([]byte(name))
+}
