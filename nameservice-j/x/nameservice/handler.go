@@ -3,7 +3,7 @@ package nameservice
 import (
 	"fmt"
 
-	"github.com/kava-labs/nameservice-j/x/nameservice/internal/types"
+	"github.com/Kava-Labs/sdk-tutorials/nameservice-j/x/nameservice/internal/types"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
