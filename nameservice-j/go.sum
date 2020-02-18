@@ -58,6 +58,9 @@ github.com/cosmos/go-bip39 v0.0.0-20180819234021-555e2067c45d/go.mod h1:tSxLoYXy
 github.com/cosmos/ledger-cosmos-go v0.10.3/go.mod h1:J8//BsAGTo3OC/vDLjMRFLW6q0WAaXvHnVc7ZmE8iUY=
 github.com/cosmos/ledger-cosmos-go v0.11.1/go.mod h1:J8//BsAGTo3OC/vDLjMRFLW6q0WAaXvHnVc7ZmE8iUY=
 github.com/cosmos/ledger-go v0.9.2/go.mod h1:oZJ2hHAZROdlHiwTg4t7kP+GKIIkBT+o6c9QWFanOyI=
+github.com/cosmos/sdk-tutorials v0.37.0 h1:o9I2u1EqXKK8apZpYLHw7qdu/wN6PAlDUQczlyyT8oA=
+github.com/cosmos/sdk-tutorials/nameservice v0.0.0-20200215192136-7cc73bd0ec07 h1:vMFf0RdtYEf0NgsxfcLnfbi/UA1BMuiDhZKNQcpQBm0=
+github.com/cosmos/sdk-tutorials/nameservice v0.0.0-20200215192136-7cc73bd0ec07/go.mod h1:a0n1IqkDuYkP/B9lPOqYomjAzOw65Cq6Zxcm2zqQWwQ=
 github.com/cpuguy83/go-md2man v1.0.10/go.mod h1:SmD6nW6nTyfqj6ABTjUi3V3JVMnlJmwcJI5acqYI6dE=
 github.com/danieljoos/wincred v1.0.2/go.mod h1:SnuYRW9lp1oJrZX/dXJqr0cPK5gYXqx3EJbmjhLdK9U=
 github.com/davecgh/go-spew v0.0.0-20171005155431-ecdeabc65495/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
