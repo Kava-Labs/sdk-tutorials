@@ -31,3 +31,27 @@ func (msg MsgSetName) Route() string {
 func (msg MsgSetName) Type() string { 
 	return "set_name" 
 }
+
+// ValidateBasic runs stateless checks on the message
+func (msg MsgSetName) ValidateBasic() error {
+	if msg.Owner.Empty() {
+		return sdkerrors.Wrap(sdkerrors.ErrInvalidAddress, msg.Owner.String())
+	}
+	if len(msg.Name) == 0 || len(msg.Value) == 0 {
+		return sdkerrors.Wrap(sdkerrors.ErrUnknownRequest, "Name and/or Value cannot be empty")
+	}
+	return nil
+}
+
+// GetSignBytes encodes the message for signing
+func (msg MsgSetName) GetSignBytes() []byte {
+	return sdk.MustSortJSON(ModuleCdc.MustMarshalJSON(msg))
+}
+
+// GetSigners defines whose signature is required
+func (msg MsgSetName) GetSigners() []sdk.AccAddress {
+	return []sdk.AccAddress{msg.Owner}
+}
+
+
+
