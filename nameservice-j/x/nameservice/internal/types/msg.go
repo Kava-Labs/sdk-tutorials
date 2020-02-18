@@ -21,3 +21,13 @@ func NewMsgSetName(name string, value string, owner sdk.AccAddress) MsgSetName {
 		Owner: owner,
 	}
 }
+
+// Route should return the name of the module
+func (msg MsgSetName) Route() string { 
+	return RouterKey 
+}
+
+// Type should return the action
+func (msg MsgSetName) Type() string { 
+	return "set_name" 
+}
