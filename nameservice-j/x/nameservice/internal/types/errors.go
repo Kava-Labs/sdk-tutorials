@@ -4,8 +4,7 @@ import (
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 )
 
-// TODO: Fill out some custom errors for the module
-// You can see how they are constructed below:
-// var (
-//	ErrInvalid = sdkerrors.Register(ModuleName, 1, "custom error message")
-// )
+// custom error handler for names that do not exist
+var (
+	ErrNameDoesNotExist = sdkerrors.Register(ModuleName, 1, "name does not exist")
+)
