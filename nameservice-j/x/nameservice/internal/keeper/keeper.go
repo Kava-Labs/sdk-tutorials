@@ -23,3 +23,15 @@ func (k Keeper) SetWhois(ctx sdk.Context, name string, whois types.Whois) {
 	store := ctx.KVStore(k.storeKey)
 	store.Set([]byte(name), k.cdc.MustMarshalBinaryBare(whois))
 }
+
+// Gets the entire Whois metadata struct for a name
+func (k Keeper) GetWhois(ctx sdk.Context, name string) types.Whois {
+	store := ctx.KVStore(k.storeKey)
+	if !k.IsNamePresent(ctx, name) {
+		return types.NewWhois()
+	}
+	bz := store.Get([]byte(name))
+	var whois types.Whois
+	k.cdc.MustUnmarshalBinaryBare(bz, &whois)
+	return whois
+}
