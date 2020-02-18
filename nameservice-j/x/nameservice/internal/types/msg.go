@@ -2,46 +2,22 @@ package types
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 )
 
-// TODO: Describe your actions, these will implment the interface of `sdk.Msg`
-/*
-verify interface at compile time
-var _ sdk.Msg = &Msg<Action>{}
+const RouterKey = ModuleName // this was defined in your key.go file
 
-Msg<Action> - struct for unjailing jailed validator
-type Msg<Action> struct {
-	ValidatorAddr sdk.ValAddress `json:"address" yaml:"address"` // address of the validator operator
+// MsgSetName defines a SetName message
+type MsgSetName struct {
+	Name  string         `json:"name"`
+	Value string         `json:"value"`
+	Owner sdk.AccAddress `json:"owner"`
 }
 
-NewMsg<Action> creates a new Msg<Action> instance
-func NewMsg<Action>(validatorAddr sdk.ValAddress) Msg<Action> {
-	return Msg<Action>{
-		ValidatorAddr: validatorAddr,
+// NewMsgSetName is a constructor function for MsgSetName
+func NewMsgSetName(name string, value string, owner sdk.AccAddress) MsgSetName {
+	return MsgSetName{
+		Name:  name,
+		Value: value,
+		Owner: owner,
 	}
 }
-
-const <action>Const = "<action>"
-
-// nolint
-func (msg Msg<Action>) Route() string { return RouterKey }
-func (msg Msg<Action>) Type() string  { return <action>Const }
-func (msg Msg<Action>) GetSigners() []sdk.AccAddress {
-	return []sdk.AccAddress{sdk.AccAddress(msg.ValidatorAddr)}
-}
-
-GetSignBytes gets the bytes for the message signer to sign on
-func (msg Msg<Action>) GetSignBytes() []byte {
-	bz := ModuleCdc.MustMarshalJSON(msg)
-	return sdk.MustSortJSON(bz)
-}
-
-ValidateBasic validity check for the AnteHandler
-func (msg Msg<Action>) ValidateBasic() error {
-	if msg.ValidatorAddr.Empty() {
-		return sdkerrors.Wrap(sdkerrors.ErrInvalidAddress, "missing validator address"
-	}
-	return nil
-}
-*/
