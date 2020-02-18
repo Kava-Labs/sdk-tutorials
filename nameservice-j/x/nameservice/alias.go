@@ -1,40 +1,33 @@
 package nameservice
 
 import (
-	"github.com/jmaheswaran/nameservice-j/x/nameservice/internal/keeper"
-	"github.com/jmaheswaran/nameservice-j/x/nameservice/internal/types"
+	"github.com/cosmos/sdk-tutorials/nameservice/x/nameservice/internal/keeper"
+	"github.com/cosmos/sdk-tutorials/nameservice/x/nameservice/internal/types"
 )
 
 const (
-	// TODO: define constants that you would like exposed from the internal package
-
-	ModuleName        = types.ModuleName
-	RouterKey         = types.RouterKey
-	StoreKey          = types.StoreKey
-	DefaultParamspace = types.DefaultParamspace
-	QueryParams       = types.QueryParams
-	QuerierRoute      = types.QuerierRoute
+	ModuleName = types.ModuleName
+	RouterKey  = types.RouterKey
+	StoreKey   = types.StoreKey
 )
 
 var (
-	// functions aliases
-	NewKeeper           = keeper.NewKeeper
-	NewQuerier          = keeper.NewQuerier
-	RegisterCodec       = types.RegisterCodec
-	NewGenesisState     = types.NewGenesisState
-	DefaultGenesisState = types.DefaultGenesisState
-	ValidateGenesis     = types.ValidateGenesis
-	// TODO: Fill out function aliases
-
-	// variable aliases
-	ModuleCdc     = types.ModuleCdc
-	// TODO: Fill out variable aliases
+	NewKeeper        = keeper.NewKeeper
+	NewQuerier       = keeper.NewQuerier
+	NewMsgBuyName    = types.NewMsgBuyName
+	NewMsgSetName    = types.NewMsgSetName
+	NewMsgDeleteName = types.NewMsgDeleteName
+	NewWhois         = types.NewWhois
+	ModuleCdc        = types.ModuleCdc
+	RegisterCodec    = types.RegisterCodec
 )
 
 type (
-	Keeper       = keeper.Keeper
-	GenesisState = types.GenesisState
-	Params       = types.Params
-
-	// TODO: Fill out module types
+	Keeper          = keeper.Keeper
+	MsgSetName      = types.MsgSetName
+	MsgBuyName      = types.MsgBuyName
+	MsgDeleteName   = types.MsgDeleteName
+	QueryResResolve = types.QueryResResolve
+	QueryResNames   = types.QueryResNames
+	Whois           = types.Whois
 )
