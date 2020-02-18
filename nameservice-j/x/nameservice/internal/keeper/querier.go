@@ -2,7 +2,7 @@ package keeper
 
 import (
 	"github.com/cosmos/cosmos-sdk/codec"
-	// QUESTION - is this path name correct?
+	// QUESTION - is this path name correct?s
 	"github.com/Kava-Labs/sdk-tutorials/nameservice-j/x/nameservice/internal/types"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
