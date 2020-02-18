@@ -88,3 +88,18 @@ func (k Keeper) IsNamePresent(ctx sdk.Context, name string) bool {
 	store := ctx.KVStore(k.storeKey)
 	return store.Has([]byte(name))
 }
+
+// Get an iterator over all names in which the keys are the names and the values are the whois
+func (k Keeper) GetNamesIterator(ctx sdk.Context) sdk.Iterator {
+	store := ctx.KVStore(k.storeKey)
+	return sdk.KVStorePrefixIterator(store, []byte{})
+}
+
+// NewKeeper creates new instances of the nameservice Keeper
+func NewKeeper(coinKeeper bank.Keeper, storeKey sdk.StoreKey, cdc *codec.Codec) Keeper {
+	return Keeper{
+		CoinKeeper: coinKeeper,
+		storeKey:   storeKey,
+		cdc:        cdc,
+	}
+}
