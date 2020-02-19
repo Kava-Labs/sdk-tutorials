@@ -7,6 +7,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	abci "github.com/tendermint/tendermint/abci/types"
+	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
+
 )
 
 // query endpoints supported by the nameservice Querier
@@ -48,7 +50,7 @@ func queryResolve(ctx sdk.Context, path []string, req abci.RequestQuery, keeper 
 
 	return res, nil
 }
-}
+
 
 // nolint: unparam
 func queryWhois(ctx sdk.Context, path []string, req abci.RequestQuery, keeper Keeper) ([]byte, error) {
