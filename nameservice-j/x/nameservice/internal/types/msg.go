@@ -4,7 +4,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
-const RouterKey = ModuleName // this was defined in your key.go file
+// const RouterKey = ModuleName // this was defined in your key.go file
 
 ////////////////////////////////////////
 // MSG SET NAME FUNCTIONALITY BELOW
@@ -100,6 +100,7 @@ func (msg MsgBuyName) ValidateBasic() error {
 	}
 	if !msg.Bid.IsAllPositive() {
 		return sdkerrors.ErrInsufficientFunds
+	}
 	return nil
 }
 
