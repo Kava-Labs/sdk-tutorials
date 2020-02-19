@@ -4,6 +4,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/Kava-Labs/sdk-tutorials/nameservice-j/x/nameservice/internal/types"
+	"github.com/cosmos/cosmos-sdk/x/bank"
 )
 
 // Keeper maintains the link to data storage and exposes getter/setter methods for the various parts of the state machine
